@@ -17,3 +17,5 @@ jobs:
       - docker/check
       - docker/build:
           image: naceflabidi/graphql-sample
+      - docker/push:
+          image: naceflabidi/graphql-sample

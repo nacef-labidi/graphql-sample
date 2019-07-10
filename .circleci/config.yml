@@ -8,6 +8,7 @@ workflows:
   build-deploy-pipeline:
     jobs:
       - build-push-image
+      - deploy-chart
 
 
 jobs:

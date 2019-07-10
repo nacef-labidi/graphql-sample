@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   docker: circleci/docker@0.5.2
+  helm: circleci/helm@0.1.2
 
 workflows:
   build-deploy-pipeline:
@@ -19,3 +20,12 @@ jobs:
           image: naceflabidi/graphql-sample
       - docker/push:
           image: naceflabidi/graphql-sample
+
+  deploy-chart:
+    executor: docker/machine
+    steps:
+      - helm/install-helm-chart:
+          chart: ./helm/graphql-sample
+          namespace: graphql
+          release-name: graphql
+          tls-hostname: https://35.189.123.181

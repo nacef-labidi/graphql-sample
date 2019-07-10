@@ -11,7 +11,7 @@ workflows:
 
 jobs:
   build-push-image:
-    executor: docker
+    executor: docker/machine
     steps:
       - checkout
       - docker/check

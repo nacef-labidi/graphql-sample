@@ -9,7 +9,7 @@ mongodb:
 
 image:
   repository: naceflabidi/graphql-sample
-  tag: stable
+  tag: latest
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -28,7 +28,8 @@ ingress:
     certmanager.k8s.io/cluster-issuer: letsencrypt-prod
   hosts:
     - host: graphql.tcs.o3stech.com
-      paths: []
+      paths:
+        - /
 
   tls:
     - secretName: graphql.tcs.o3stech.com

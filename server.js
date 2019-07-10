@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const graphqlExpress = require("express-graphql");
 const bookSchema = require('./graphql/BookSchema').BookSchema;
 
-mongoose.connect('mongodb://mongo/myappdb', (err) => {
+mongoose.connect('mongodb://graphql-mongodb/myappdb', (err) => {
     if (err) throw err;
     console.log("connected to mongo");
 })
